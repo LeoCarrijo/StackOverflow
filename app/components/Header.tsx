@@ -15,7 +15,7 @@ export default function HeaderPage() {
   return (
     <header className="flex bg-white items-center fixed top-0 left-0 right-0 z-50 p-2 gap-2 border-b border-black">
       <Popover>
-        <PopoverTrigger className="border - border-black"><Menu className="w-12" /></PopoverTrigger>
+        <PopoverTrigger><Menu className="w-12" /></PopoverTrigger>
         <PopoverContent>
           <div className="flex flex-col gap-popover">
             <Link className="flex gap-popover text-base hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white" href="#"><House className="w-popover-icons" />Home</Link>
