@@ -18,14 +18,14 @@ export default function HeaderPage() {
         <PopoverTrigger className="border - border-black"><Menu className="w-12" /></PopoverTrigger>
         <PopoverContent>
           <div className="flex flex-col gap-popover">
-            <Link className="flex gap-popover text-base" href="#"><House className="w-popover-icons" />Home</Link>
-            <Link className="flex gap-popover text-base" href="#"><MessageCircleQuestion className="w-popover-icons" />Questions</Link>
-            <Link className="flex gap-popover text-base" href="#"><Tags className="w-popover-icons" />Tags</Link>
+            <Link className="flex gap-popover text-base hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white" href="#"><House className="w-popover-icons" />Home</Link>
+            <Link className="flex gap-popover text-base hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white" href="#"><MessageCircleQuestion className="w-popover-icons" />Questions</Link>
+            <Link className="flex gap-popover text-base hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white" href="#"><Tags className="w-popover-icons" />Tags</Link>
           </div>
           <hr className="m-popover" />
           <div className="flex flex-col gap-popover">
-            <Link className="flex gap-popover text-base" href="#"><Users className="w-popover-icons" />Users</Link>
-            <Link className="flex gap-popover text-base" href="#"><Building2 className="w-popover-icons" />Companies</Link>
+            <Link className="flex gap-popover text-base hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white" href="#"><Users className="w-popover-icons" />Users</Link>
+            <Link className="flex gap-popover text-base hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white" href="#"><Building2 className="w-popover-icons" />Companies</Link>
           </div>
           <hr className="m-popover" />
           <div className="flex flex-col gap-popover">
@@ -33,7 +33,7 @@ export default function HeaderPage() {
               <h3 className="text-base">LABS</h3>
               <Info className="w-popover-icons" />
             </div>
-            <Link className="flex gap-popover text-base" href="#"><MessageSquareText className="w-popover-icons" />Discussions</Link>
+            <Link className="flex gap-popover text-base hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white" href="#"><MessageSquareText className="w-popover-icons" />Discussions</Link>
           </div>
         </PopoverContent>
       </Popover>
