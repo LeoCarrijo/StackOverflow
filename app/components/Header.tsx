@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
-import { Menu, Search } from "lucide-react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { Building2, House, Info, Menu, MessageCircleQuestion, MessageSquareText, Search, Tags, Users } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,7 +14,30 @@ export default function HeaderPage() {
 
   return (
     <header className="flex bg-white items-center fixed top-0 left-0 right-0 z-50 p-2 gap-2 border-b border-black">
-      <Menu className="w-12" />
+      <Popover>
+        <PopoverTrigger className="border - border-black"><Menu className="w-12" /></PopoverTrigger>
+        <PopoverContent>
+          <div className="flex flex-col gap-popover">
+            <Link className="flex gap-popover text-base" href="#"><House className="w-popover-icons" />Home</Link>
+            <Link className="flex gap-popover text-base" href="#"><MessageCircleQuestion className="w-popover-icons" />Questions</Link>
+            <Link className="flex gap-popover text-base" href="#"><Tags className="w-popover-icons" />Tags</Link>
+          </div>
+          <hr className="m-popover" />
+          <div className="flex flex-col gap-popover">
+            <Link className="flex gap-popover text-base" href="#"><Users className="w-popover-icons" />Users</Link>
+            <Link className="flex gap-popover text-base" href="#"><Building2 className="w-popover-icons" />Companies</Link>
+          </div>
+          <hr className="m-popover" />
+          <div className="flex flex-col gap-popover">
+            <div className="flex justify-between">
+              <h3 className="text-base">LABS</h3>
+              <Info className="w-popover-icons" />
+            </div>
+            <Link className="flex gap-popover text-base" href="#"><MessageSquareText className="w-popover-icons" />Discussions</Link>
+          </div>
+        </PopoverContent>
+      </Popover>
+
       <Image
         src="/stack-logo-sm.webp"
         width={150}

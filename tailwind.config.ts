@@ -9,6 +9,15 @@ export default {
   ],
   theme: {
     extend: {
+      width: {
+        "popover-icons": "1.1rem"
+      },
+      gap: {
+        "popover": "0.5rem"
+      },
+      margin: {
+        "popover": "0.55rem 0.2rem"
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
