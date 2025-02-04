@@ -31,7 +31,9 @@ export default function HeaderPage() {
           <div className="flex flex-col gap-popover">
             <div className="flex justify-between">
               <h3 className="text-base">LABS</h3>
-              <Info className="w-popover-icons" />
+              <Link href="#" className="flex gap-popover text-base hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white">
+                <Info className="w-popover-icons" />
+              </Link>
             </div>
             <Link className="flex gap-popover text-base hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white" href="#"><MessageSquareText className="w-popover-icons" />Discussions</Link>
           </div>
