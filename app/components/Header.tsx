@@ -5,6 +5,16 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
 import { Building2, House, Info, Menu, MessageCircleQuestion, MessageSquareText, Search, Tags, Users } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -39,7 +49,6 @@ export default function HeaderPage() {
           </div>
         </PopoverContent>
       </Popover>
-
       <Image
         src="/stack-logo-sm.webp"
         width={150}
@@ -47,15 +56,20 @@ export default function HeaderPage() {
         alt="StackOverflow logo"
       />
       <nav className="flex">
-        <ul className="flex">
-          {navLinks.map((link) => {
-            return (
-              <li key={link}>
-                <Link href="#" className="hidden md:block">{link}</Link>
-              </li>
-            )
-          })}
-        </ul>
+        <NavigationMenu>
+          <NavigationMenuList>
+            {navLinks.map((link) => {
+              return (
+                <NavigationMenuItem key={link}>
+                  <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <NavigationMenuLink>{link}</NavigationMenuLink>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              )
+            })}
+          </NavigationMenuList>
+        </NavigationMenu>
         <div className="relative hidden md:block">
           <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
           <Input type="text" placeholder="Pesquisar..." className="pl-10 pr-4 py-2 border rounded" />
