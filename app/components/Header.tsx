@@ -18,9 +18,59 @@ import {
 import { Building2, House, Info, Menu, MessageCircleQuestion, MessageSquareText, Search, Tags, Users } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import type { NavbarItem } from "@/typing";
+import React from "react";
 
 export default function HeaderPage() {
-  const navLinks: string[] = ["About", "Products", "Blacky Bot"];
+  const navLinks: NavbarItem[] = [
+    {
+      title: "About",
+      content: [
+        {
+          title: "About",
+          description: "About us"
+        },
+        {
+          title: "About-2",
+          description: "About us"
+        },
+      ]
+    },
+    {
+      title: "Products",
+      content: [
+        {
+          title: "Products",
+          description: "All products"
+        },
+        {
+          title: "Products-2",
+          description: "All products-2"
+        },
+        {
+          title: "Products-3",
+          description: "All products-3"
+        },
+        {
+          title: "Products-4",
+          description: "All products-4"
+        },
+      ]
+    },
+    {
+      title: "Blacky Bot",
+      content: [
+        {
+          title: "Blacky Bot AI",
+          description: "Blacky Bot AI"
+        },
+        {
+          title: "Blacky Bot AI-2",
+          description: "Blacky Bot AI"
+        },
+      ]
+    },
+  ]
 
   return (
     <header className="flex bg-white items-center fixed top-0 left-0 right-0 z-50 p-2 gap-2 border-b border-black">
@@ -56,18 +106,25 @@ export default function HeaderPage() {
         alt="StackOverflow logo"
       />
       <nav className="flex">
-        <NavigationMenu>
+        <NavigationMenu className="hidden md:block">
           <NavigationMenuList>
-            {navLinks.map((link) => {
-              return (
-                <NavigationMenuItem key={link}>
-                  <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <NavigationMenuLink>{link}</NavigationMenuLink>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              )
-            })}
+            {navLinks.map((link) => (
+              <NavigationMenuItem key={link.title}>
+                <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
+                <NavigationMenuContent className="flex flex-col gap-2 p-2">
+                  {link.content.map((content, index) => (
+                    <React.Fragment key={content.title}>
+                      <NavigationMenuLink className="whitespace-nowrap">
+                        <h4>{content.title}</h4>
+                        <p>{content.description}</p>
+                      </NavigationMenuLink>
+                      {index !== link.content.length - 1 && <hr />}
+                    </React.Fragment>
+                  ))}
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            )
+            )}
           </NavigationMenuList>
         </NavigationMenu>
         <div className="relative hidden md:block">
