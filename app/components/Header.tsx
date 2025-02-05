@@ -5,16 +5,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu"
 import { Building2, House, Info, Menu, MessageCircleQuestion, MessageSquareText, Search, Tags, Users } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,57 +13,13 @@ import React from "react";
 
 export default function HeaderPage() {
   const navLinks: NavbarItem[] = [
-    {
-      title: "About",
-      content: [
-        {
-          title: "About",
-          description: "About us"
-        },
-        {
-          title: "About-2",
-          description: "About us"
-        },
-      ]
-    },
-    {
-      title: "Products",
-      content: [
-        {
-          title: "Products",
-          description: "All products"
-        },
-        {
-          title: "Products-2",
-          description: "All products-2"
-        },
-        {
-          title: "Products-3",
-          description: "All products-3"
-        },
-        {
-          title: "Products-4",
-          description: "All products-4"
-        },
-      ]
-    },
-    {
-      title: "Blacky Bot",
-      content: [
-        {
-          title: "Blacky Bot AI",
-          description: "Blacky Bot AI"
-        },
-        {
-          title: "Blacky Bot AI-2",
-          description: "Blacky Bot AI"
-        },
-      ]
-    },
+    { title: "About", link: "/about" },
+    { title: "Services", link: "/services" },
+    { title: "Black Bot", link: "/blackbot" }
   ]
 
   return (
-    <header className="flex bg-white items-center fixed top-0 left-0 right-0 z-50 p-2 gap-2 border-b border-black">
+    <header className="flex bg-white md:justify-start items-center fixed top-0 left-0 right-0 z-50 p-2 gap-2 border-b border-black">
       <Popover>
         <PopoverTrigger><Menu className="w-12" /></PopoverTrigger>
         <PopoverContent>
@@ -106,33 +52,17 @@ export default function HeaderPage() {
         alt="StackOverflow logo"
       />
       <nav className="flex">
-        <NavigationMenu className="hidden md:block">
-          <NavigationMenuList>
-            {navLinks.map((link) => (
-              <NavigationMenuItem key={link.title}>
-                <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
-                <NavigationMenuContent className="flex flex-col gap-2 p-2">
-                  {link.content.map((content, index) => (
-                    <React.Fragment key={content.title}>
-                      <NavigationMenuLink className="whitespace-nowrap">
-                        <h4>{content.title}</h4>
-                        <p>{content.description}</p>
-                      </NavigationMenuLink>
-                      {index !== link.content.length - 1 && <hr />}
-                    </React.Fragment>
-                  ))}
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            )
-            )}
-          </NavigationMenuList>
-        </NavigationMenu>
-        <div className="relative hidden md:block">
+        <ul className="gap-4 items-center hidden md:flex">
+          {navLinks.map((item) => (
+            <li key={item.title}><Link className="hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white" href={item.link}>{item.title}</Link></li>
+          ))}
+        </ul>
+        <div className="relative hidden md:block ml-6">
           <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
           <Input type="text" placeholder="Pesquisar..." className="pl-10 pr-4 py-2 border rounded" />
         </div>
       </nav>
-      <aside className="ml-auto flex gap-2">
+      <aside className="w-auto flex gap-2 ml-auto md:m-0">
         <Button className="px-4 py-1 bg-white text-black border-black" variant="outline">Log in</Button>
         <Button className="px-4 py-2 hidden md:block">Sign up</Button>
       </aside>
