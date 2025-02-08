@@ -9,6 +9,12 @@ export default {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        main: "auto 1fr auto",
+      },
+      gridTemplateRows: {
+        main: "1fr"
+      },
       width: {
         "popover-icons": "1.1rem"
       },
