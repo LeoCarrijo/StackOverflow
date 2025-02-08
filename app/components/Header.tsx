@@ -8,15 +8,10 @@ import {
 import { Building2, House, Info, Menu, MessageCircleQuestion, MessageSquareText, Search, Tags, Users } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import type { NavbarItem } from "@/typing";
+import { navLinks } from "@/navLinks";
 import React from "react";
 
 export default function HeaderPage() {
-  const navLinks: NavbarItem[] = [
-    { title: "About", link: "/about" },
-    { title: "Services", link: "/services" },
-    { title: "Black Bot", link: "/blackbot" }
-  ]
 
   return (
     <header className="flex bg-white items-center fixed top-0 left-0 right-0 z-50 p-2 lg:px-[15%] gap-2 border-b border-black">
