@@ -19,7 +19,7 @@ export default function HeaderPage() {
   ]
 
   return (
-    <header className="flex bg-white md:justify-start items-center fixed top-0 left-0 right-0 z-50 p-2 gap-2 border-b border-black">
+    <header className="flex bg-white items-center fixed top-0 left-0 right-0 z-50 p-2 lg:px-[15%] gap-2 border-b border-black">
       <Popover>
         <PopoverTrigger><Menu className="w-12" /></PopoverTrigger>
         <PopoverContent>
@@ -57,11 +57,11 @@ export default function HeaderPage() {
             <li key={item.title}><Link className="hover:bg-slate-300 px-2 py-1 rounded-md duration-100 active:bg-slate-700 active:text-white" href={item.link}>{item.title}</Link></li>
           ))}
         </ul>
-        <div className="relative hidden md:block ml-6">
-          <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
-          <Input type="text" placeholder="Pesquisar..." className="pl-10 pr-4 py-2 border rounded" />
-        </div>
       </nav>
+      <div className="relative hidden md:block ml-auto">
+        <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
+        <Input type="text" placeholder="Pesquisar..." className="pl-10 pr-4 py-2 border rounded" />
+      </div>
       <aside className="w-auto flex gap-2 ml-auto md:m-0">
         <Button className="px-4 py-1 bg-white text-black border-black" variant="outline">Log in</Button>
         <Button className="px-4 py-2 hidden md:block">Sign up</Button>
